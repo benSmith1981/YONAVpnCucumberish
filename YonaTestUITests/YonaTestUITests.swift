@@ -7,30 +7,30 @@
 //
 
 import XCTest
-
-class YonaTestUITests: XCTestCase {
+import YonaTest
+class YonaInitializer: NSObject {
+    class func YonaSwiftInit()
+    {
+        var application : XCUIApplication!
+        //A closure that will be executed just before executing any of your features
+        beforeStart { () -> Void in
+            application = XCUIApplication()
+        }
+        //A Given step definition
+        Given("the VPN has not started") { (args, userInfo) -> Void in
+            application.launch()
+        }
+        //Another step definition
+        When("I press the button") { (args, userInfo) -> Void in
+            application.buttons["VPNButton"].tap()
+        }
         
-    override func setUp() {
-        super.setUp()
-        
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        Then("the VPN will start") { (args, userInfo) -> Void in
+//            CCISAssert(VPNSingleton.sharedInstance.started, "VPN not started") //if what happens upon failure
+        }
+        //Tell Cucumberish the name of your features folder and let it execute them for you...
+        Cucumberish.instance().fixMissingLastScenario = true
+        Cucumberish.instance().prettyNamesAllowed = true
+        Cucumberish.executeFeaturesInDirectory("Features", featureTags: nil)
     }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
 }
