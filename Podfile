@@ -5,6 +5,7 @@ use_frameworks!
 
 target 'YonaTest' do
 pod "AlamofireJsonToObjects", '~> 1.0'
+pod 'Swifter', '~> 1.1'
 end
 
 target 'YonaTestTests' do

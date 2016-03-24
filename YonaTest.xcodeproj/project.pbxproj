@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7222CD9A059F9A85AA990D33 /* Pods_YonaTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 658F38DEB06A75C71DF7C685 /* Pods_YonaTest.framework */; };
+		900C668A1CA2D9B100BE4BB2 /* NSURLSessionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900C66891CA2D9B100BE4BB2 /* NSURLSessionTest.swift */; };
 		9012AE0E1C9B1A5500C4DC08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9012AE0D1C9B1A5500C4DC08 /* AppDelegate.swift */; };
 		9012AE101C9B1A5500C4DC08 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9012AE0F1C9B1A5500C4DC08 /* FirstViewController.swift */; };
 		9012AE121C9B1A5500C4DC08 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9012AE111C9B1A5500C4DC08 /* SecondViewController.swift */; };
@@ -68,6 +69,7 @@
 		9012AF8B1C9B20CE00C4DC08 /* Features in Resources */ = {isa = PBXBuildFile; fileRef = 9012AF8A1C9B20CE00C4DC08 /* Features */; };
 		9012AF8D1C9B255500C4DC08 /* VPNSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9012AF8C1C9B255500C4DC08 /* VPNSingleton.swift */; };
 		9012AF901C9B2BB500C4DC08 /* VPNSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9012AF8C1C9B255500C4DC08 /* VPNSingleton.swift */; };
+		90ACCDA51CA4143A000149F1 /* ConfigServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ACCDA41CA4143A000149F1 /* ConfigServer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,7 @@
 
 /* Begin PBXFileReference section */
 		658F38DEB06A75C71DF7C685 /* Pods_YonaTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YonaTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		900C66891CA2D9B100BE4BB2 /* NSURLSessionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLSessionTest.swift; sourceTree = "<group>"; };
 		9012AE0A1C9B1A5500C4DC08 /* YonaTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YonaTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9012AE0D1C9B1A5500C4DC08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9012AE0F1C9B1A5500C4DC08 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -211,6 +214,8 @@
 		9012AF5A1C9B20C200C4DC08 /* NSString+Formatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Formatter.m"; sourceTree = "<group>"; };
 		9012AF8A1C9B20CE00C4DC08 /* Features */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Features; sourceTree = "<group>"; };
 		9012AF8C1C9B255500C4DC08 /* VPNSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPNSingleton.swift; sourceTree = "<group>"; };
+		90ACCDA41CA4143A000149F1 /* ConfigServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigServer.swift; sourceTree = "<group>"; };
+		90ACCDA61CA4318B000149F1 /* YonaVPNTest.mobileconfig */ = {isa = PBXFileReference; lastKnownFileType = file; path = YonaVPNTest.mobileconfig; sourceTree = "<group>"; };
 		BDA54340B4B8508615D9454C /* Pods-YonaTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YonaTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YonaTest/Pods-YonaTest.debug.xcconfig"; sourceTree = "<group>"; };
 		EF945381B9E85A2227E63740 /* Pods-YonaTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YonaTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-YonaTest/Pods-YonaTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -285,6 +290,9 @@
 				9012AE3D1C9B1B2A00C4DC08 /* Main.storyboard */,
 				9012AE1B1C9B1A5500C4DC08 /* Info.plist */,
 				9012AF8C1C9B255500C4DC08 /* VPNSingleton.swift */,
+				900C66891CA2D9B100BE4BB2 /* NSURLSessionTest.swift */,
+				90ACCDA41CA4143A000149F1 /* ConfigServer.swift */,
+				90ACCDA61CA4318B000149F1 /* YonaVPNTest.mobileconfig */,
 			);
 			path = YonaTest;
 			sourceTree = "<group>";
@@ -660,8 +668,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				900C668A1CA2D9B100BE4BB2 /* NSURLSessionTest.swift in Sources */,
 				9012AE121C9B1A5500C4DC08 /* SecondViewController.swift in Sources */,
 				9012AE0E1C9B1A5500C4DC08 /* AppDelegate.swift in Sources */,
+				90ACCDA51CA4143A000149F1 /* ConfigServer.swift in Sources */,
 				9012AF8D1C9B255500C4DC08 /* VPNSingleton.swift in Sources */,
 				9012AE411C9B1BAD00C4DC08 /* Commentary.swift in Sources */,
 				9012AE421C9B1BAD00C4DC08 /* MatchResults.swift in Sources */,

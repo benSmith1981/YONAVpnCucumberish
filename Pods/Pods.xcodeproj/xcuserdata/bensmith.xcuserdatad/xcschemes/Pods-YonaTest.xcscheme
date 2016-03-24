@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'A50519C4150433C5ED878C48'
+               BlueprintIdentifier = '5BEDD4D3556D463074B19389'
                BlueprintName = 'Pods-YonaTest'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_YonaTest.framework'>

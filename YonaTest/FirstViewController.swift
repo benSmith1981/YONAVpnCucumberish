@@ -10,6 +10,7 @@ import UIKit
 import NetworkExtension
 import AlamofireJsonToObjects
 import Alamofire
+import Swifter
 
 class FirstViewController: UIViewController, UITableViewDelegate {
     
@@ -31,27 +32,43 @@ class FirstViewController: UIViewController, UITableViewDelegate {
     }
     
     @IBAction func startVPN(sender: AnyObject) {
-        VPNSingleton.sharedInstance.manager.loadFromPreferencesWithCompletionHandler { (NSError) -> Void in
-            let newIPSec = NEVPNProtocolIKEv2()
-            let password = "pw";
-            newIPSec.username = "test"
-            newIPSec.passwordReference = password.dataUsingEncoding(NSUTF8StringEncoding)
-            newIPSec.serverAddress = "proxy.yona.nu"
-            newIPSec.disconnectOnSleep = false
-            newIPSec.useExtendedAuthentication = true
-            newIPSec.authenticationMethod = NEVPNIKEAuthenticationMethod.SharedSecret
-            let connectRule = NEOnDemandRuleConnect()
-            connectRule.interfaceTypeMatch = .Any
-            
-            VPNSingleton.sharedInstance.manager.onDemandRules = [connectRule]
-            VPNSingleton.sharedInstance.manager.`protocolConfiguration` = newIPSec
-            VPNSingleton.sharedInstance.manager.enabled = true
-            VPNSingleton.sharedInstance.manager.saveToPreferencesWithCompletionHandler({ (error) -> Void in
-                print(error)
-            })
-            let url = NSURLRequest(URL: NSURL(string: "https://www.google.com")!)
-            self.webView.loadRequest(url)
-        }
+        //LOAD VPN CERT with SAFARI, WON"T COME BACK TO APP THOUGH!
+//        if let requestUrl = NSURL(string: "http://localhost:8888/YonaVPNTest.mobileconfig") {
+//            UIApplication.sharedApplication().openURL(requestUrl)
+//        }
+        
+        //LOAD VPN WITH HTTPSERVER, BEST SOLUTION IF I CAN MAKE IT WORK AS IT COMES BACK TO THE APP USING NSURL SCHEME
+        let url:NSURL = NSURL(string: "http://localhost:8888/YonaVPNTest.mobileconfig")!
+
+        do {
+            let mobileConfigData = try NSData(contentsOfURL: url, options: NSDataReadingOptions())
+            let server: ConfigServer = ConfigServer(configData: mobileConfigData, returnURL: "com.yonatest")
+            server.start()
+        } catch{}
+
+        
+        //Load VPN with networking, NOT WHAT WE NEED FOR YONA
+//        VPNSingleton.sharedInstance.manager.loadFromPreferencesWithCompletionHandler { (NSError) -> Void in
+//            let newIPSec = NEVPNProtocolIKEv2()
+//            let password = "pw";
+//            newIPSec.username = "test"
+//            newIPSec.passwordReference = password.dataUsingEncoding(NSUTF8StringEncoding)
+//            newIPSec.serverAddress = "proxy.yona.nu"
+//            newIPSec.disconnectOnSleep = false
+//            newIPSec.useExtendedAuthentication = true
+//            newIPSec.authenticationMethod = NEVPNIKEAuthenticationMethod.SharedSecret
+//            let connectRule = NEOnDemandRuleConnect()
+//            connectRule.interfaceTypeMatch = .Any
+//            
+//            VPNSingleton.sharedInstance.manager.onDemandRules = [connectRule]
+//            VPNSingleton.sharedInstance.manager.`protocolConfiguration` = newIPSec
+//            VPNSingleton.sharedInstance.manager.enabled = true
+//            VPNSingleton.sharedInstance.manager.saveToPreferencesWithCompletionHandler({ (error) -> Void in
+//                print(error)
+//            })
+//            let url = NSURLRequest(URL: NSURL(string: "https://www.google.com")!)
+//            self.webView.loadRequest(url)
+//        }
         
     }
     

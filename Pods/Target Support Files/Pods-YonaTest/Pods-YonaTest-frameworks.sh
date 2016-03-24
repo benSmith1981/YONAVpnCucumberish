@@ -87,9 +87,11 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-YonaTest/Alamofire.framework"
   install_framework "Pods-YonaTest/AlamofireJsonToObjects.framework"
   install_framework "Pods-YonaTest/EVReflection.framework"
+  install_framework "Pods-YonaTest/Swifter.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-YonaTest/Alamofire.framework"
   install_framework "Pods-YonaTest/AlamofireJsonToObjects.framework"
   install_framework "Pods-YonaTest/EVReflection.framework"
+  install_framework "Pods-YonaTest/Swifter.framework"
 fi
