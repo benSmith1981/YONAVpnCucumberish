@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>CFBundleURLName</key>
-			<string>com.yonatest</string>
+			<string>com.yonatest.mobiquity</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>YonaTest</string>

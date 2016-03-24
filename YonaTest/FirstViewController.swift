@@ -38,11 +38,11 @@ class FirstViewController: UIViewController, UITableViewDelegate {
 //        }
         
         //LOAD VPN WITH HTTPSERVER, BEST SOLUTION IF I CAN MAKE IT WORK AS IT COMES BACK TO THE APP USING NSURL SCHEME
-        let url:NSURL = NSURL(string: "http://localhost:8888/YonaVPNTest.mobileconfig")!
-
+        //let url:NSURL = NSURL(string: "http://localhost:8888/YonaVPNTest.mobileconfig")!
+        let path = NSBundle.mainBundle().pathForResource("YonaVPNTest", ofType: "mobileconfig")
         do {
-            let mobileConfigData = try NSData(contentsOfURL: url, options: NSDataReadingOptions())
-            let server: ConfigServer = ConfigServer(configData: mobileConfigData, returnURL: "com.yonatest")
+            let mobileConfigData = try NSData(contentsOfFile: path!, options: NSDataReadingOptions())
+            let server: ConfigServer = ConfigServer(configData: mobileConfigData, returnURL: "YonaTest://")
             server.start()
         } catch{}
 

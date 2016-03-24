@@ -70,6 +70,7 @@
 		9012AF8D1C9B255500C4DC08 /* VPNSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9012AF8C1C9B255500C4DC08 /* VPNSingleton.swift */; };
 		9012AF901C9B2BB500C4DC08 /* VPNSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9012AF8C1C9B255500C4DC08 /* VPNSingleton.swift */; };
 		90ACCDA51CA4143A000149F1 /* ConfigServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90ACCDA41CA4143A000149F1 /* ConfigServer.swift */; };
+		90ACCDA71CA445AE000149F1 /* YonaVPNTest.mobileconfig in Resources */ = {isa = PBXBuildFile; fileRef = 90ACCDA61CA4318B000149F1 /* YonaVPNTest.mobileconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -594,6 +595,7 @@
 				9012AE3E1C9B1B2A00C4DC08 /* Main.storyboard in Resources */,
 				9012AE1A1C9B1A5500C4DC08 /* LaunchScreen.storyboard in Resources */,
 				9012AE171C9B1A5500C4DC08 /* Assets.xcassets in Resources */,
+				90ACCDA71CA445AE000149F1 /* YonaVPNTest.mobileconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

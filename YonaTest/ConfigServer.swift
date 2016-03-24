@@ -82,7 +82,9 @@ class ConfigServer: NSObject {
                 return .NotFound
             case .Ready:
                 self.serverState = .InstalledConfig
-                return HttpResponse.RAW(200, "OK", ["Content-Type": "application/x-apple-aspen-config"], self.configData!)
+                return HttpResponse.RAW(200, "OK", ["Content-Type": "application/x-apple-aspen-config"]) { (body: HttpResponseBodyWriter) in
+                    body.write(Array(UnsafeBufferPointer(start: UnsafePointer<UInt8>(self.configData.bytes), count: self.configData.length)))
+                }
             case .InstalledConfig:
                 return .MovedPermanently(self.returnURL)
             case .BackToApp:
